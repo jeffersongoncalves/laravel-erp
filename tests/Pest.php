@@ -1,43 +1,22 @@
 <?php
 
 declare(strict_types=1);
-use JeffersonGoncalves\Erp\Core\Tests\TestCase;
 
 /*
  * Monorepo root Pest configuration.
  *
- * Test files live under packages/<module>/tests and are discovered through the
- * <testsuite> globs in phpunit.xml.dist. Each package's TestCase is bound to its
- * own tests directory below (absolute paths, since Pest resolves a relative
- * ->in() against the root tests directory). We then load each package's
- * tests/Pest.php so their helper functions are available, exactly as they are in
- * the standalone split repositories.
+ * Each package ships its own tests/Pest.php which binds its TestCase to its own
+ * Unit/Feature directories (via absolute __DIR__ paths, so it resolves the same
+ * on every OS and in each standalone split repository) and defines its helper
+ * functions. We load them all here — a single binding per package, no duplicates.
  */
 
 $packages = [
-    'core' => TestCase::class,
-    'accounting' => JeffersonGoncalves\Erp\Accounting\Tests\TestCase::class,
-    'stock' => JeffersonGoncalves\Erp\Stock\Tests\TestCase::class,
-    'selling' => JeffersonGoncalves\Erp\Selling\Tests\TestCase::class,
-    'buying' => JeffersonGoncalves\Erp\Buying\Tests\TestCase::class,
-    'manufacturing' => JeffersonGoncalves\Erp\Manufacturing\Tests\TestCase::class,
-    'assets' => JeffersonGoncalves\Erp\Assets\Tests\TestCase::class,
-    'subcontracting' => JeffersonGoncalves\Erp\Subcontracting\Tests\TestCase::class,
-    'crm' => JeffersonGoncalves\Erp\Crm\Tests\TestCase::class,
-    'projects' => JeffersonGoncalves\Erp\Projects\Tests\TestCase::class,
-    'support' => JeffersonGoncalves\Erp\Support\Tests\TestCase::class,
-    'quality' => JeffersonGoncalves\Erp\Quality\Tests\TestCase::class,
-    'maintenance' => JeffersonGoncalves\Erp\Maintenance\Tests\TestCase::class,
+    'core', 'accounting', 'stock', 'selling', 'buying', 'manufacturing',
+    'assets', 'subcontracting', 'crm', 'projects', 'support', 'quality',
+    'maintenance', 'suite',
 ];
 
-foreach ($packages as $dir => $testCase) {
-    uses($testCase)->in(__DIR__.'/../packages/'.$dir.'/tests');
-}
-
-// The umbrella suite (meta-package) has its own TestCase but no helper functions.
-uses(JeffersonGoncalves\Erp\Suite\Tests\TestCase::class)->in(__DIR__.'/../packages/suite/tests');
-
-// Load each component package's helper functions (defined in their tests/Pest.php).
-foreach (array_keys($packages) as $dir) {
+foreach ($packages as $dir) {
     require __DIR__.'/../packages/'.$dir.'/tests/Pest.php';
 }

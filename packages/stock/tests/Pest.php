@@ -4,7 +4,7 @@ use JeffersonGoncalves\Erp\Stock\Enums\ValuationMethod;
 use JeffersonGoncalves\Erp\Stock\Models\Item;
 use JeffersonGoncalves\Erp\Stock\Tests\TestCase;
 
-uses(TestCase::class)->in('Unit', 'Feature');
+uses(TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
 
 /**
  * Create a stock item, optionally pinned to a valuation method.
