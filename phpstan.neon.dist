@@ -3,6 +3,7 @@ includes:
 
 parameters:
     paths:
+        - packages/suite/src
         - packages/core/src
         - packages/core/tests/Fixtures
         - packages/accounting/src

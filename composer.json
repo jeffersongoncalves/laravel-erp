@@ -1,6 +1,6 @@
 {
-    "name": "jeffersongoncalves/laravel-erp",
-    "description": "Monorepo (dev source-of-truth) for the Laravel ERP domain package ecosystem. Split read-only into individual jeffersongoncalves/laravel-erp-* repositories.",
+    "name": "jeffersongoncalves/laravel-erp-monorepo",
+    "description": "Development monorepo (source-of-truth, not published) for the Laravel ERP domain ecosystem. Component packages split read-only into jeffersongoncalves/laravel-erp-* and the umbrella into jeffersongoncalves/laravel-erp-suite (package jeffersongoncalves/laravel-erp).",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -27,23 +27,10 @@
         "pestphp/pest-plugin-laravel": "^3.0|^4.0",
         "symplify/monorepo-builder": "^11.2"
     },
-    "replace": {
-        "jeffersongoncalves/laravel-erp-core": "self.version",
-        "jeffersongoncalves/laravel-erp-accounting": "self.version",
-        "jeffersongoncalves/laravel-erp-stock": "self.version",
-        "jeffersongoncalves/laravel-erp-selling": "self.version",
-        "jeffersongoncalves/laravel-erp-buying": "self.version",
-        "jeffersongoncalves/laravel-erp-manufacturing": "self.version",
-        "jeffersongoncalves/laravel-erp-assets": "self.version",
-        "jeffersongoncalves/laravel-erp-subcontracting": "self.version",
-        "jeffersongoncalves/laravel-erp-crm": "self.version",
-        "jeffersongoncalves/laravel-erp-projects": "self.version",
-        "jeffersongoncalves/laravel-erp-support": "self.version",
-        "jeffersongoncalves/laravel-erp-quality": "self.version",
-        "jeffersongoncalves/laravel-erp-maintenance": "self.version"
-    },
     "autoload-dev": {
         "psr-4": {
+            "JeffersonGoncalves\\Erp\\Suite\\": "packages/suite/src",
+            "JeffersonGoncalves\\Erp\\Suite\\Tests\\": "packages/suite/tests",
             "JeffersonGoncalves\\Erp\\Core\\": "packages/core/src",
             "JeffersonGoncalves\\Erp\\Core\\Tests\\": "packages/core/tests",
             "JeffersonGoncalves\\Erp\\Core\\Database\\Factories\\": "packages/core/database/factories",

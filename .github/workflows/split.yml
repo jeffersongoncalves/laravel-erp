@@ -14,6 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         package:
+          - { local: suite,           split: laravel-erp-suite }
           - { local: core,            split: laravel-erp-core }
           - { local: accounting,      split: laravel-erp-accounting }
           - { local: stock,           split: laravel-erp-stock }

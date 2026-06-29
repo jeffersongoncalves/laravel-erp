@@ -11,7 +11,7 @@
         "sales-order",
         "submittable"
     ],
-    "homepage": "https://github.com/jeffersongoncalves/laravel-erp-selling",
+    "homepage": "https://github.com/jeffersongoncalves/laravel-erp",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -75,5 +75,9 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/jeffersongoncalves/laravel-erp/issues",
+        "source": "https://github.com/jeffersongoncalves/laravel-erp"
+    }
 }

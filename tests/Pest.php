@@ -34,7 +34,10 @@ foreach ($packages as $dir => $testCase) {
     uses($testCase)->in(__DIR__.'/../packages/'.$dir.'/tests');
 }
 
-// Load each package's helper functions (defined in their tests/Pest.php).
+// The umbrella suite (meta-package) has its own TestCase but no helper functions.
+uses(JeffersonGoncalves\Erp\Suite\Tests\TestCase::class)->in(__DIR__.'/../packages/suite/tests');
+
+// Load each component package's helper functions (defined in their tests/Pest.php).
 foreach (array_keys($packages) as $dir) {
     require __DIR__.'/../packages/'.$dir.'/tests/Pest.php';
 }

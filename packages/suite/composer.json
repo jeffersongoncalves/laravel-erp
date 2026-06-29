@@ -1,13 +1,11 @@
 {
-    "name": "jeffersongoncalves/laravel-erp-assets",
-    "description": "ERP assets — fixed asset register, depreciation and movements for the Laravel ERP ecosystem",
+    "name": "jeffersongoncalves/laravel-erp",
+    "description": "Umbrella meta-package bundling the full Laravel ERP domain ecosystem (core, accounting, stock, selling, buying, manufacturing, assets, subcontracting, CRM, projects, support, quality, maintenance).",
     "keywords": [
         "laravel",
         "erp",
-        "assets",
-        "fixed-asset",
-        "depreciation",
-        "submittable"
+        "umbrella",
+        "bundle"
     ],
     "homepage": "https://github.com/jeffersongoncalves/laravel-erp",
     "license": "MIT",
@@ -21,13 +19,20 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/contracts": "^11.0|^12.0|^13.0",
-        "illuminate/database": "^11.0|^12.0|^13.0",
-        "illuminate/events": "^11.0|^12.0|^13.0",
-        "illuminate/support": "^11.0|^12.0|^13.0",
-        "jeffersongoncalves/laravel-erp-accounting": "dev-main",
+        "spatie/laravel-package-tools": "^1.15",
         "jeffersongoncalves/laravel-erp-core": "dev-main",
-        "spatie/laravel-package-tools": "^1.15"
+        "jeffersongoncalves/laravel-erp-accounting": "dev-main",
+        "jeffersongoncalves/laravel-erp-stock": "dev-main",
+        "jeffersongoncalves/laravel-erp-selling": "dev-main",
+        "jeffersongoncalves/laravel-erp-buying": "dev-main",
+        "jeffersongoncalves/laravel-erp-manufacturing": "dev-main",
+        "jeffersongoncalves/laravel-erp-assets": "dev-main",
+        "jeffersongoncalves/laravel-erp-subcontracting": "dev-main",
+        "jeffersongoncalves/laravel-erp-crm": "dev-main",
+        "jeffersongoncalves/laravel-erp-projects": "dev-main",
+        "jeffersongoncalves/laravel-erp-support": "dev-main",
+        "jeffersongoncalves/laravel-erp-quality": "dev-main",
+        "jeffersongoncalves/laravel-erp-maintenance": "dev-main"
     },
     "require-dev": {
         "larastan/larastan": "^2.9|^3.0",
@@ -39,27 +44,23 @@
     },
     "autoload": {
         "psr-4": {
-            "JeffersonGoncalves\\Erp\\Assets\\": "src/"
+            "JeffersonGoncalves\\Erp\\Suite\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JeffersonGoncalves\\Erp\\Assets\\Tests\\": "tests/",
-            "JeffersonGoncalves\\Erp\\Assets\\Database\\Factories\\": "database/factories/",
-            "JeffersonGoncalves\\Erp\\Core\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-core/database/factories/",
-            "JeffersonGoncalves\\Erp\\Accounting\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-accounting/database/factories/"
+            "JeffersonGoncalves\\Erp\\Suite\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "JeffersonGoncalves\\Erp\\Assets\\ErpAssetsServiceProvider"
+                "JeffersonGoncalves\\Erp\\Suite\\ErpServiceProvider"
             ]
         }
     },
     "scripts": {
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint",
         "analyse": "vendor/bin/phpstan analyse"
     },
