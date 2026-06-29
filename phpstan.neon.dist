@@ -1,0 +1,21 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - packages/core/src
+        - packages/core/tests/Fixtures
+        - packages/accounting/src
+        - packages/stock/src
+        - packages/selling/src
+        - packages/buying/src
+        - packages/manufacturing/src
+        - packages/assets/src
+        - packages/subcontracting/src
+        - packages/crm/src
+        - packages/projects/src
+        - packages/support/src
+        - packages/quality/src
+        - packages/maintenance/src
+    level: 5
+    ignoreErrors: []

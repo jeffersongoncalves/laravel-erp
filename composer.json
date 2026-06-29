@@ -1,0 +1,103 @@
+{
+    "name": "jeffersongoncalves/laravel-erp",
+    "description": "Monorepo (dev source-of-truth) for the Laravel ERP domain package ecosystem. Split read-only into individual jeffersongoncalves/laravel-erp-* repositories.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/events": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "spatie/laravel-package-tools": "^1.15"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.9|^3.0",
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+        "symplify/monorepo-builder": "^11.2"
+    },
+    "replace": {
+        "jeffersongoncalves/laravel-erp-core": "self.version",
+        "jeffersongoncalves/laravel-erp-accounting": "self.version",
+        "jeffersongoncalves/laravel-erp-stock": "self.version",
+        "jeffersongoncalves/laravel-erp-selling": "self.version",
+        "jeffersongoncalves/laravel-erp-buying": "self.version",
+        "jeffersongoncalves/laravel-erp-manufacturing": "self.version",
+        "jeffersongoncalves/laravel-erp-assets": "self.version",
+        "jeffersongoncalves/laravel-erp-subcontracting": "self.version",
+        "jeffersongoncalves/laravel-erp-crm": "self.version",
+        "jeffersongoncalves/laravel-erp-projects": "self.version",
+        "jeffersongoncalves/laravel-erp-support": "self.version",
+        "jeffersongoncalves/laravel-erp-quality": "self.version",
+        "jeffersongoncalves/laravel-erp-maintenance": "self.version"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\Erp\\Core\\": "packages/core/src",
+            "JeffersonGoncalves\\Erp\\Core\\Tests\\": "packages/core/tests",
+            "JeffersonGoncalves\\Erp\\Core\\Database\\Factories\\": "packages/core/database/factories",
+            "JeffersonGoncalves\\Erp\\Accounting\\": "packages/accounting/src",
+            "JeffersonGoncalves\\Erp\\Accounting\\Tests\\": "packages/accounting/tests",
+            "JeffersonGoncalves\\Erp\\Accounting\\Database\\Factories\\": "packages/accounting/database/factories",
+            "JeffersonGoncalves\\Erp\\Stock\\": "packages/stock/src",
+            "JeffersonGoncalves\\Erp\\Stock\\Tests\\": "packages/stock/tests",
+            "JeffersonGoncalves\\Erp\\Stock\\Database\\Factories\\": "packages/stock/database/factories",
+            "JeffersonGoncalves\\Erp\\Selling\\": "packages/selling/src",
+            "JeffersonGoncalves\\Erp\\Selling\\Tests\\": "packages/selling/tests",
+            "JeffersonGoncalves\\Erp\\Selling\\Database\\Factories\\": "packages/selling/database/factories",
+            "JeffersonGoncalves\\Erp\\Buying\\": "packages/buying/src",
+            "JeffersonGoncalves\\Erp\\Buying\\Tests\\": "packages/buying/tests",
+            "JeffersonGoncalves\\Erp\\Buying\\Database\\Factories\\": "packages/buying/database/factories",
+            "JeffersonGoncalves\\Erp\\Manufacturing\\": "packages/manufacturing/src",
+            "JeffersonGoncalves\\Erp\\Manufacturing\\Tests\\": "packages/manufacturing/tests",
+            "JeffersonGoncalves\\Erp\\Manufacturing\\Database\\Factories\\": "packages/manufacturing/database/factories",
+            "JeffersonGoncalves\\Erp\\Assets\\": "packages/assets/src",
+            "JeffersonGoncalves\\Erp\\Assets\\Tests\\": "packages/assets/tests",
+            "JeffersonGoncalves\\Erp\\Assets\\Database\\Factories\\": "packages/assets/database/factories",
+            "JeffersonGoncalves\\Erp\\Subcontracting\\": "packages/subcontracting/src",
+            "JeffersonGoncalves\\Erp\\Subcontracting\\Tests\\": "packages/subcontracting/tests",
+            "JeffersonGoncalves\\Erp\\Subcontracting\\Database\\Factories\\": "packages/subcontracting/database/factories",
+            "JeffersonGoncalves\\Erp\\Crm\\": "packages/crm/src",
+            "JeffersonGoncalves\\Erp\\Crm\\Tests\\": "packages/crm/tests",
+            "JeffersonGoncalves\\Erp\\Crm\\Database\\Factories\\": "packages/crm/database/factories",
+            "JeffersonGoncalves\\Erp\\Projects\\": "packages/projects/src",
+            "JeffersonGoncalves\\Erp\\Projects\\Tests\\": "packages/projects/tests",
+            "JeffersonGoncalves\\Erp\\Projects\\Database\\Factories\\": "packages/projects/database/factories",
+            "JeffersonGoncalves\\Erp\\Support\\": "packages/support/src",
+            "JeffersonGoncalves\\Erp\\Support\\Tests\\": "packages/support/tests",
+            "JeffersonGoncalves\\Erp\\Support\\Database\\Factories\\": "packages/support/database/factories",
+            "JeffersonGoncalves\\Erp\\Quality\\": "packages/quality/src",
+            "JeffersonGoncalves\\Erp\\Quality\\Tests\\": "packages/quality/tests",
+            "JeffersonGoncalves\\Erp\\Quality\\Database\\Factories\\": "packages/quality/database/factories",
+            "JeffersonGoncalves\\Erp\\Maintenance\\": "packages/maintenance/src",
+            "JeffersonGoncalves\\Erp\\Maintenance\\Tests\\": "packages/maintenance/tests",
+            "JeffersonGoncalves\\Erp\\Maintenance\\Database\\Factories\\": "packages/maintenance/database/factories"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

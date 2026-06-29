@@ -1,0 +1,72 @@
+{
+    "name": "jeffersongoncalves/laravel-erp-maintenance",
+    "description": "ERP maintenance — maintenance schedules and visits for the Laravel ERP ecosystem",
+    "keywords": [
+        "laravel",
+        "erp",
+        "maintenance",
+        "maintenance-schedule",
+        "maintenance-visit"
+    ],
+    "homepage": "https://github.com/jeffersongoncalves/laravel-erp-maintenance",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/events": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "jeffersongoncalves/laravel-erp-core": "dev-main",
+        "spatie/laravel-package-tools": "^1.15"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.9|^3.0",
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffersonGoncalves\\Erp\\Maintenance\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\Erp\\Maintenance\\Tests\\": "tests/",
+            "JeffersonGoncalves\\Erp\\Maintenance\\Database\\Factories\\": "database/factories/",
+            "JeffersonGoncalves\\Erp\\Core\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-core/database/factories/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeffersonGoncalves\\Erp\\Maintenance\\ErpMaintenanceServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
