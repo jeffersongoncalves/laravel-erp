@@ -26,8 +26,8 @@
         "illuminate/database": "^11.0|^12.0|^13.0",
         "illuminate/events": "^11.0|^12.0|^13.0",
         "illuminate/support": "^11.0|^12.0|^13.0",
-        "jeffersongoncalves/laravel-erp-core": "dev-main",
-        "jeffersongoncalves/laravel-erp-selling": "dev-main",
+        "jeffersongoncalves/laravel-erp-core": "self.version",
+        "jeffersongoncalves/laravel-erp-selling": "self.version",
         "spatie/laravel-package-tools": "^1.15"
     },
     "require-dev": {
