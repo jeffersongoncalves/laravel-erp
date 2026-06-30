@@ -19,7 +19,6 @@
     ],
     "require": {
         "php": "^8.2",
-        "spatie/laravel-package-tools": "^1.15",
         "jeffersongoncalves/laravel-erp-core": "self.version",
         "jeffersongoncalves/laravel-erp-accounting": "self.version",
         "jeffersongoncalves/laravel-erp-stock": "self.version",
