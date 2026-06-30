@@ -28,6 +28,7 @@ jobs:
           - { local: support,         split: laravel-erp-support }
           - { local: quality,         split: laravel-erp-quality }
           - { local: maintenance,     split: laravel-erp-maintenance }
+          - { local: hr,              split: laravel-erp-hr }
 
     name: Split ${{ matrix.package.split }}
     steps:
