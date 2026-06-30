@@ -14,7 +14,7 @@ declare(strict_types=1);
 $packages = [
     'core', 'accounting', 'stock', 'selling', 'buying', 'manufacturing',
     'assets', 'subcontracting', 'crm', 'projects', 'support', 'quality',
-    'maintenance', 'suite',
+    'maintenance', 'hr', 'suite',
 ];
 
 foreach ($packages as $dir) {

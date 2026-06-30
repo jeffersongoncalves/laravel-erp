@@ -1,11 +1,15 @@
 {
-    "name": "jeffersongoncalves/laravel-erp",
-    "description": "Umbrella meta-package bundling the full Laravel ERP domain ecosystem (core, accounting, stock, selling, buying, manufacturing, assets, subcontracting, CRM, projects, support, quality, maintenance, HR).",
+    "name": "jeffersongoncalves/laravel-erp-hr",
+    "description": "ERP HR — employees, leave, attendance and payroll for the Laravel ERP ecosystem",
     "keywords": [
         "laravel",
         "erp",
-        "umbrella",
-        "bundle"
+        "hr",
+        "payroll",
+        "employee",
+        "leave",
+        "attendance",
+        "submittable"
     ],
     "homepage": "https://github.com/jeffersongoncalves/laravel-erp",
     "license": "MIT",
@@ -19,20 +23,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "jeffersongoncalves/laravel-erp-core": "self.version",
         "jeffersongoncalves/laravel-erp-accounting": "self.version",
-        "jeffersongoncalves/laravel-erp-stock": "self.version",
-        "jeffersongoncalves/laravel-erp-selling": "self.version",
-        "jeffersongoncalves/laravel-erp-buying": "self.version",
-        "jeffersongoncalves/laravel-erp-manufacturing": "self.version",
-        "jeffersongoncalves/laravel-erp-assets": "self.version",
-        "jeffersongoncalves/laravel-erp-subcontracting": "self.version",
-        "jeffersongoncalves/laravel-erp-crm": "self.version",
-        "jeffersongoncalves/laravel-erp-projects": "self.version",
-        "jeffersongoncalves/laravel-erp-support": "self.version",
-        "jeffersongoncalves/laravel-erp-quality": "self.version",
-        "jeffersongoncalves/laravel-erp-maintenance": "self.version",
-        "jeffersongoncalves/laravel-erp-hr": "self.version"
+        "jeffersongoncalves/laravel-erp-core": "self.version"
     },
     "require-dev": {
         "larastan/larastan": "^2.9|^3.0",
@@ -44,23 +36,27 @@
     },
     "autoload": {
         "psr-4": {
-            "JeffersonGoncalves\\Erp\\Suite\\": "src"
+            "JeffersonGoncalves\\Erp\\Hr\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JeffersonGoncalves\\Erp\\Suite\\Tests\\": "tests"
+            "JeffersonGoncalves\\Erp\\Hr\\Tests\\": "tests/",
+            "JeffersonGoncalves\\Erp\\Hr\\Database\\Factories\\": "database/factories/",
+            "JeffersonGoncalves\\Erp\\Core\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-core/database/factories/",
+            "JeffersonGoncalves\\Erp\\Accounting\\Database\\Factories\\": "vendor/jeffersongoncalves/laravel-erp-accounting/database/factories/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "JeffersonGoncalves\\Erp\\Suite\\ErpServiceProvider"
+                "JeffersonGoncalves\\Erp\\Hr\\ErpHrServiceProvider"
             ]
         }
     },
     "scripts": {
         "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint",
         "analyse": "vendor/bin/phpstan analyse"
     },

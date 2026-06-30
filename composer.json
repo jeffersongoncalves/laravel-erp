@@ -69,7 +69,10 @@
             "JeffersonGoncalves\\Erp\\Quality\\Database\\Factories\\": "packages/quality/database/factories",
             "JeffersonGoncalves\\Erp\\Maintenance\\": "packages/maintenance/src",
             "JeffersonGoncalves\\Erp\\Maintenance\\Tests\\": "packages/maintenance/tests",
-            "JeffersonGoncalves\\Erp\\Maintenance\\Database\\Factories\\": "packages/maintenance/database/factories"
+            "JeffersonGoncalves\\Erp\\Maintenance\\Database\\Factories\\": "packages/maintenance/database/factories",
+            "JeffersonGoncalves\\Erp\\Hr\\": "packages/hr/src",
+            "JeffersonGoncalves\\Erp\\Hr\\Tests\\": "packages/hr/tests",
+            "JeffersonGoncalves\\Erp\\Hr\\Database\\Factories\\": "packages/hr/database/factories"
         }
     },
     "scripts": {
