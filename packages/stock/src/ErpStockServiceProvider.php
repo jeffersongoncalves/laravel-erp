@@ -39,6 +39,12 @@ class ErpStockServiceProvider extends PackageServiceProvider
                 'create_erp_purchase_receipt_items_table',
                 'create_erp_stock_reconciliations_table',
                 'create_erp_stock_reconciliation_items_table',
+                'create_erp_putaway_rules_table',
+                'create_erp_shipments_table',
+                'create_erp_shipment_parcels_table',
+                'create_erp_shipment_delivery_notes_table',
+                'create_erp_packing_slips_table',
+                'create_erp_packing_slip_items_table',
             ]);
     }
 

@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        $prefix = config('erp-stock.table_prefix') ?? '';
+
+        Schema::create($prefix.'shipment_delivery_notes', function (Blueprint $table) use ($prefix) {
+            $table->id();
+            $table->foreignId('shipment_id')->constrained($prefix.'shipments')->cascadeOnDelete();
+            $table->foreignId('delivery_note_id')->constrained($prefix.'delivery_notes')->cascadeOnDelete();
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        $prefix = config('erp-stock.table_prefix') ?? '';
+
+        Schema::dropIfExists($prefix.'shipment_delivery_notes');
+    }
+};

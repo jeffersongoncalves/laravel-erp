@@ -122,6 +122,42 @@ class ModelResolver
         return static::resolve('stock_reconciliation_item');
     }
 
+    /** @return class-string<Model> */
+    public static function putawayRule(): string
+    {
+        return static::resolve('putaway_rule');
+    }
+
+    /** @return class-string<Model> */
+    public static function shipment(): string
+    {
+        return static::resolve('shipment');
+    }
+
+    /** @return class-string<Model> */
+    public static function shipmentParcel(): string
+    {
+        return static::resolve('shipment_parcel');
+    }
+
+    /** @return class-string<Model> */
+    public static function shipmentDeliveryNote(): string
+    {
+        return static::resolve('shipment_delivery_note');
+    }
+
+    /** @return class-string<Model> */
+    public static function packingSlip(): string
+    {
+        return static::resolve('packing_slip');
+    }
+
+    /** @return class-string<Model> */
+    public static function packingSlipItem(): string
+    {
+        return static::resolve('packing_slip_item');
+    }
+
     /**
      * @param  class-string|null  $contract
      * @return class-string

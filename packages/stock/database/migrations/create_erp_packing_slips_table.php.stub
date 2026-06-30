@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        $prefix = config('erp-stock.table_prefix') ?? '';
+
+        Schema::create($prefix.'packing_slips', function (Blueprint $table) use ($prefix) {
+            $table->id();
+            $table->foreignId('delivery_note_id')->constrained($prefix.'delivery_notes')->cascadeOnDelete();
+            $table->integer('from_case_no')->default(1);
+            $table->integer('to_case_no')->default(1);
+            $table->decimal('net_weight', 21, 9)->default(0);
+            $table->decimal('gross_weight', 21, 9)->default(0);
+            $table->unsignedTinyInteger('docstatus')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        $prefix = config('erp-stock.table_prefix') ?? '';
+
+        Schema::dropIfExists($prefix.'packing_slips');
+    }
+};

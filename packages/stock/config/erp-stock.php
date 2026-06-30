@@ -8,10 +8,16 @@ use JeffersonGoncalves\Erp\Stock\Models\Item;
 use JeffersonGoncalves\Erp\Stock\Models\ItemPrice;
 use JeffersonGoncalves\Erp\Stock\Models\MaterialRequest;
 use JeffersonGoncalves\Erp\Stock\Models\MaterialRequestItem;
+use JeffersonGoncalves\Erp\Stock\Models\PackingSlip;
+use JeffersonGoncalves\Erp\Stock\Models\PackingSlipItem;
 use JeffersonGoncalves\Erp\Stock\Models\PriceList;
 use JeffersonGoncalves\Erp\Stock\Models\PurchaseReceipt;
 use JeffersonGoncalves\Erp\Stock\Models\PurchaseReceiptItem;
+use JeffersonGoncalves\Erp\Stock\Models\PutawayRule;
 use JeffersonGoncalves\Erp\Stock\Models\SerialNo;
+use JeffersonGoncalves\Erp\Stock\Models\Shipment;
+use JeffersonGoncalves\Erp\Stock\Models\ShipmentDeliveryNote;
+use JeffersonGoncalves\Erp\Stock\Models\ShipmentParcel;
 use JeffersonGoncalves\Erp\Stock\Models\StockEntry;
 use JeffersonGoncalves\Erp\Stock\Models\StockEntryDetail;
 use JeffersonGoncalves\Erp\Stock\Models\StockLedgerEntry;
@@ -62,6 +68,12 @@ return [
         'purchase_receipt_item' => PurchaseReceiptItem::class,
         'stock_reconciliation' => StockReconciliation::class,
         'stock_reconciliation_item' => StockReconciliationItem::class,
+        'putaway_rule' => PutawayRule::class,
+        'shipment' => Shipment::class,
+        'shipment_parcel' => ShipmentParcel::class,
+        'shipment_delivery_note' => ShipmentDeliveryNote::class,
+        'packing_slip' => PackingSlip::class,
+        'packing_slip_item' => PackingSlipItem::class,
     ],
 
     /*
