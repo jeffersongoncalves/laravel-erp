@@ -29,6 +29,10 @@ class ErpBuyingServiceProvider extends PackageServiceProvider
                 'create_erp_supplier_quotation_items_table',
                 'create_erp_purchase_orders_table',
                 'create_erp_purchase_order_items_table',
+                'create_erp_blanket_orders_table',
+                'create_erp_blanket_order_items_table',
+                'create_erp_supplier_scorecards_table',
+                'create_erp_supplier_scorecard_criteria_table',
             ]);
     }
 

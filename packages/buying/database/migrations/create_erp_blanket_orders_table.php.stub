@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        $prefix = config('erp-buying.table_prefix') ?? '';
+
+        Schema::create($prefix.'blanket_orders', function (Blueprint $table) use ($prefix) {
+            $table->id();
+            $table->string('order_type')->default('Purchasing');
+            $table->string('party_type')->default('Supplier');
+            $table->unsignedBigInteger('party_id')->nullable();
+            $table->date('from_date');
+            $table->date('to_date');
+            $table->foreignId('company_id')->nullable()->constrained($prefix.'companies')->nullOnDelete();
+            $table->unsignedTinyInteger('docstatus')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        $prefix = config('erp-buying.table_prefix') ?? '';
+
+        Schema::dropIfExists($prefix.'blanket_orders');
+    }
+};
