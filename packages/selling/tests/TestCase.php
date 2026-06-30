@@ -198,6 +198,12 @@ abstract class TestCase extends Orchestra
             'create_erp_quotation_items_table',
             'create_erp_sales_orders_table',
             'create_erp_sales_order_items_table',
+            'create_erp_pricing_rules_table',
+            'create_erp_pricing_rule_items_table',
+            'create_erp_coupon_codes_table',
+            'create_erp_loyalty_programs_table',
+            'create_erp_loyalty_program_tiers_table',
+            'create_erp_loyalty_point_entries_table',
         ];
     }
 

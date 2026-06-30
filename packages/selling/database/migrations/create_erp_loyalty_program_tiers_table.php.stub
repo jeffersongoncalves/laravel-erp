@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        $prefix = config('erp-selling.table_prefix') ?? '';
+
+        Schema::create($prefix.'loyalty_program_tiers', function (Blueprint $table) use ($prefix) {
+            $table->id();
+            $table->foreignId('loyalty_program_id')->constrained($prefix.'loyalty_programs')->cascadeOnDelete();
+            $table->string('tier_name');
+            $table->decimal('min_spent', 21, 9)->default(0);
+            $table->decimal('collection_factor', 21, 9)->default(1);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        $prefix = config('erp-selling.table_prefix') ?? '';
+
+        Schema::dropIfExists($prefix.'loyalty_program_tiers');
+    }
+};

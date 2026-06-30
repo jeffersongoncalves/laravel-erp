@@ -4,6 +4,9 @@ namespace JeffersonGoncalves\Erp\Selling;
 
 use JeffersonGoncalves\Erp\Selling\Models\Contracts\CustomerContract;
 use JeffersonGoncalves\Erp\Selling\Models\Contracts\CustomerGroupContract;
+use JeffersonGoncalves\Erp\Selling\Services\CouponCodeService;
+use JeffersonGoncalves\Erp\Selling\Services\LoyaltyProgramService;
+use JeffersonGoncalves\Erp\Selling\Services\PricingRuleService;
 use JeffersonGoncalves\Erp\Selling\Services\QuotationService;
 use JeffersonGoncalves\Erp\Selling\Services\SalesOrderService;
 use Spatie\LaravelPackageTools\Package;
@@ -28,6 +31,12 @@ class ErpSellingServiceProvider extends PackageServiceProvider
                 'create_erp_quotation_items_table',
                 'create_erp_sales_orders_table',
                 'create_erp_sales_order_items_table',
+                'create_erp_pricing_rules_table',
+                'create_erp_pricing_rule_items_table',
+                'create_erp_coupon_codes_table',
+                'create_erp_loyalty_programs_table',
+                'create_erp_loyalty_program_tiers_table',
+                'create_erp_loyalty_point_entries_table',
             ]);
     }
 
@@ -35,6 +44,9 @@ class ErpSellingServiceProvider extends PackageServiceProvider
     {
         $this->app->singleton(SalesOrderService::class);
         $this->app->singleton(QuotationService::class);
+        $this->app->singleton(PricingRuleService::class);
+        $this->app->singleton(CouponCodeService::class);
+        $this->app->singleton(LoyaltyProgramService::class);
     }
 
     public function packageBooted(): void

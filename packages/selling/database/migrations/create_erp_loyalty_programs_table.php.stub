@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        $prefix = config('erp-selling.table_prefix') ?? '';
+
+        Schema::create($prefix.'loyalty_programs', function (Blueprint $table) use ($prefix) {
+            $table->id();
+            $table->string('loyalty_program_name');
+            $table->foreignId('company_id')->nullable()->constrained($prefix.'companies')->nullOnDelete();
+            $table->date('from_date')->nullable();
+            $table->date('to_date')->nullable();
+            $table->decimal('conversion_factor', 21, 9)->default(1);
+            $table->integer('expiry_duration')->default(0);
+            $table->boolean('disabled')->default(false);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        $prefix = config('erp-selling.table_prefix') ?? '';
+
+        Schema::dropIfExists($prefix.'loyalty_programs');
+    }
+};
